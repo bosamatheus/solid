@@ -5,7 +5,5 @@ export default class Electronic extends Item {
     super('Electronic', description, price);
   }
 
-  calculateTaxes(): number {
-    return this.price * 0.4;
-  }
+  getTax = () => 0.4;
 }
