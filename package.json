@@ -1,14 +1,14 @@
 {
   "name": "solid",
   "version": "1.0.0",
-  "description": "SOLID Principle using TypeScript",
+  "description": "SOLID Principles using TypeScript",
   "main": "index.ts",
   "scripts": {
     "test": "jest"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["SOLID", "TDD", "TypeScript"],
+  "author": "Matheus Bosa",
+  "license": "MIT",
   "dependencies": {
     "@types/jest": "^26.0.24",
     "jest": "^27.0.6",
