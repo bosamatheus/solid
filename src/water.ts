@@ -5,5 +5,7 @@ export default class Water extends Item {
     super('Water', description, price);
   }
 
-  getTax = () => 0;
+  getTax(): number { 
+    throw new Error('Not implemented')
+  };
 }
