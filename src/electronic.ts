@@ -1,6 +1,6 @@
-import Item from './item';
+import TaxItem from './taxItem';
 
-export default class Electronic extends Item {
+export default class Electronic extends TaxItem {
   constructor(description: string, price: number) {
     super('Electronic', description, price);
   }

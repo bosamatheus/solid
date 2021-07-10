@@ -18,10 +18,10 @@ test('Should calculate order subtotal', () => {
 
 test('Should calculate order taxes', () => {
   const order = new Order();
-  order.addItem(new Cigar('Marlboro', 12));
-  order.addItem(new Beer('Heineken', 5));
-  order.addItem(new Water('Crystal', 3));
-  order.addItem(new Electronic('Headphone', 50));
+  order.addItem(new Cigar('Marlboro', 12)); // 6.00
+  order.addItem(new Beer('Heineken', 5)); // 1.00
+  order.addItem(new Water('Crystal', 3)); // 0.00
+  order.addItem(new Electronic('Headphone', 50)); // 20.00
 
   const taxes = order.getTaxes();
 
@@ -30,10 +30,10 @@ test('Should calculate order taxes', () => {
 
 test('Should calculate order total', () => {
   const order = new Order();
-  order.addItem(new Cigar('Marlboro', 12));
-  order.addItem(new Beer('Heineken', 5));
-  order.addItem(new Water('Crystal', 3));
-  order.addItem(new Electronic('Headphone', 50));
+  order.addItem(new Cigar('Marlboro', 12)); // 18.00
+  order.addItem(new Beer('Heineken', 5)); // 6.00
+  order.addItem(new Water('Crystal', 3)); // 3.00
+  order.addItem(new Electronic('Headphone', 50)); // 70.00
 
   const taxes = order.getTotal();
 

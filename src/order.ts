@@ -1,4 +1,5 @@
 import Item from './item';
+import TaxItem from './taxItem';
 
 export default class Order {
   code: string;
@@ -18,7 +19,10 @@ export default class Order {
   }
 
   getTaxes(): number {
-    return this.items.reduce((acc, item) => acc + item.calculateTaxes(), 0);
+    return this.items.reduce((acc, item) => {
+      if (item instanceof TaxItem) return acc + item.calculateTaxes();
+      return acc;
+    }, 0);
   }
 
   getTotal(): number {
