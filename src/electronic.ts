@@ -5,5 +5,7 @@ export default class Electronic extends TaxItem {
     super('Electronic', description, price);
   }
 
-  getTax = () => 0.4;
+  getTax() {
+    return 0.4
+  };
 }

@@ -5,5 +5,9 @@ export default class Beer extends TaxItem {
     super('Beer', description, price);
   }
 
-  getTax = () => 0.2;
+  getTax(date: Date) {
+    const february = 1;
+    if (date.getMonth() === february) return 0.1;
+    return 0.2;
+  }
 }

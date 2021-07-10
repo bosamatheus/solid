@@ -23,9 +23,22 @@ test('Should calculate order taxes', () => {
   order.addItem(new Water('Crystal', 3)); // 0.00
   order.addItem(new Electronic('Headphone', 50)); // 20.00
 
-  const taxes = order.getTaxes();
+  const taxes = order.getTaxes(new Date('2022-07-10'));
 
   expect(taxes).toBe(27);
+});
+
+test('Should calculate order carnival taxes', () => {
+  const order = new Order();
+  order.addItem(new Cigar('Marlboro', 12)); // 6.00
+  order.addItem(new Beer('Heineken', 5)); // 0.5
+  order.addItem(new Water('Crystal', 3)); // 0.00
+  order.addItem(new Electronic('Headphone', 50)); // 20.00
+
+  const carnival = new Date('2022-02-15');
+  const taxes = order.getTaxes(carnival);
+
+  expect(taxes).toBe(26.5);
 });
 
 test('Should calculate order total', () => {
@@ -35,7 +48,7 @@ test('Should calculate order total', () => {
   order.addItem(new Water('Crystal', 3)); // 3.00
   order.addItem(new Electronic('Headphone', 50)); // 70.00
 
-  const taxes = order.getTotal();
+  const taxes = order.getTotal(new Date('2022-07-10'));
 
   expect(taxes).toBe(97);
 });

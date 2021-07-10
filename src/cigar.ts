@@ -5,5 +5,7 @@ export default class Cigar extends TaxItem {
     super('Cigar', description, price);
   }
 
-  getTax = () => 0.5;
+  getTax() { 
+    return 0.5
+  };
 }

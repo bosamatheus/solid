@@ -18,14 +18,14 @@ export default class Order {
     return this.items.reduce((acc, item) => acc + item.price, 0);
   }
 
-  getTaxes(): number {
+  getTaxes(date: Date): number {
     return this.items.reduce((acc, item) => {
-      if (item instanceof TaxItem) return acc + item.calculateTaxes();
+      if (item instanceof TaxItem) return acc + item.calculateTaxes(date);
       return acc;
     }, 0);
   }
 
-  getTotal(): number {
-    return this.getSubtotal() + this.getTaxes();
+  getTotal(date: Date): number {
+    return this.getSubtotal() + this.getTaxes(date);
   }
 }
